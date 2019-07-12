@@ -215,9 +215,14 @@ public class HelloController {
         response.setHeader("Access-Control-Allow-Origin", "*");
         end = new Date().getTime();
         count++;
-//        long netCost = (end - point7) / 2;
-//        serverClientIDGenerate = point1 - start + point3 -point2;
-//        clientClientIDGenerate = point2 - point1 - netCost * 2;
+
+
+        System.out.println("Negotiation: " + (point1 + point3 - point2 - start));
+        System.out.println("NegotiationTotal : : " + (point3 - start));
+
+
+
+//
         long negotiation = point3 - start;
         long registration = point5 - point3;
         long tokenObtaining = point7 - point5;
@@ -226,49 +231,11 @@ public class HelloController {
         totalRegistration += registration;
         totalTokenObtaining += tokenObtaining;
         long totalTotal = totalNegotiation + totalRegistration + totalTokenObtaining;
-
-
-//        System.out.println("negotiation: " + negotiation + "ms");
-//        System.out.println("registration: " + registration + "ms");
-//        System.out.println("tokenObtaining: " + tokenObtaining + "ms");
-//        System.out.println("total: " + total1 + "ms");
-
         System.out.println(count);
         System.out.println("negotiation: " + totalNegotiation/count + "ms");
         System.out.println("registration: " + totalRegistration/count + "ms");
         System.out.println("tokenObtaining: " + totalTokenObtaining/count + "ms");
         System.out.println("total: " + totalTotal/count + "ms");
-
-
-
-
-//        serverRegistration = point5 - point4;
-//        //IdPRegistration = Long.parseLong(request.getParameter("time1")) - netCost * 2;
-//        clientRegistration = point4 - point3 - netCost * 4 - IdPRegistration;
-//        serverAuthorization = point7 - point6;
-//        IdPAuthorization = Long.parseLong(request.getParameter("time2")) - netCost * 2;
-//        clientAuthorization = point6 - point5 - netCost * 4 - IdPAuthorization;
-//        totalNetCost = netCost * 12;
-//        long total = serverClientIDGenerate
-//                + clientClientIDGenerate
-//                + serverRegistration
-//                + IdPRegistration
-//                + clientRegistration
-//                + serverAuthorization
-//                + IdPAuthorization
-//                + clientAuthorization
-//                + totalNetCost;
-//        System.out.println("current count: " + count);
-//        System.out.println("totalTime: " + total/1000 + "s" + total%1000 + "ms");
-//        System.out.println("serverClientIDGenerateTime: " + serverClientIDGenerate/1000 + "s" + serverClientIDGenerate%1000 + "ms");
-//        System.out.println("clientClientIDGenerateTime: " + clientClientIDGenerate/1000 + "s" + clientClientIDGenerate%1000 + "ms");
-//        System.out.println("serverRegistrationTime: " + serverRegistration/1000 + "s" + serverRegistration%1000 + "ms");
-//        System.out.println("IdPRegistrationTime: " + IdPRegistration/1000 + "s" + IdPRegistration%1000 + "ms");
-//        System.out.println("clientRegistrationTime: " + clientRegistration/1000 + "s" + clientRegistration%1000 + "ms");
-//        System.out.println("serverAuthorizationTime: " + serverAuthorization/1000 + "s" + serverAuthorization%1000 + "ms");
-//        System.out.println("IdPAuthorizationTime: " + IdPAuthorization/1000 + "s" + IdPAuthorization%1000 + "ms");
-//        System.out.println("clientAuthorizationTime: " + clientAuthorization/1000 + "s" + clientAuthorization%1000 + "ms");
-//        System.out.println("totalNetCostTime: " + totalNetCost/1000 + "s" + totalNetCost%1000 + "ms");
         return "end";
     }
 
