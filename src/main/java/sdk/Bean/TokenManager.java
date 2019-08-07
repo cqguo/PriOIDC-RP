@@ -1,4 +1,4 @@
-package Bean;
+package sdk.Bean;
 
 public class TokenManager {
     static String token;

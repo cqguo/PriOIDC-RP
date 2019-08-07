@@ -1,4 +1,4 @@
-package Bean;
+package sdk.Bean;
 
 public class RegisterResponse {
     String client_id;

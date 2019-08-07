@@ -1,14 +1,11 @@
-package Bean;
+package sdk.Bean;
 
 import com.google.gson.Gson;
 
 import java.security.*;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
-import java.security.spec.InvalidKeySpecException;
-import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
-import java.util.Date;
 
 public class Token {
     public class Header{
